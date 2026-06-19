@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Diane Camejo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
-      background: #f7f2ec;
+      background: #f4f7f2;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -23,7 +23,7 @@
       position: fixed;
       top: -100px; right: -60px;
       width: 380px; height: 380px;
-      background: radial-gradient(circle, rgba(190,155,120,0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(130,160,120,0.2) 0%, transparent 70%);
       pointer-events: none;
     }
     body::after {
@@ -31,7 +31,7 @@
       position: fixed;
       bottom: -60px; left: -60px;
       width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(160,120,90,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(100,140,100,0.15) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -45,32 +45,41 @@
       z-index: 1;
     }
 
-    .avatar-wrap {
+    .monogram {
       width: 114px;
       height: 114px;
       border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #fff;
+      background: #7a9e7e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
-      box-shadow: 0 0 0 5px rgba(160,120,90,0.15), 0 8px 30px rgba(100,70,50,0.15);
+      box-shadow: 0 0 0 5px rgba(120,160,120,0.15), 0 8px 30px rgba(80,120,80,0.2);
+      border: 3px solid #fff;
     }
-    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .monogram span {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.08em;
+    }
 
     .name {
       font-family: 'Playfair Display', serif;
       font-size: 2.1rem;
-      font-weight: 400;
-      color: #2e1f14;
+      font-weight: 500;
+      font-style: normal;
+      color: #2c3e2d;
       text-align: center;
     }
-    .name em { font-style: italic; color: #8b5e3c; }
 
     .title {
       font-size: 0.7rem;
       font-weight: 400;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #a07850;
+      color: #7a9e7e;
       margin-top: 8px;
       text-align: center;
     }
@@ -80,16 +89,16 @@
       align-items: center;
       gap: 10px;
       margin: 22px 0;
-      color: #c4a882;
+      color: #a8c5a8;
       font-size: 0.75rem;
     }
-    .deco-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, #c4a882); }
-    .deco-line.right { background: linear-gradient(90deg, #c4a882, transparent); }
+    .deco-line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, #a8c5a8); }
+    .deco-line.right { background: linear-gradient(90deg, #a8c5a8, transparent); }
 
     .bio {
       font-size: 0.87rem;
       line-height: 1.85;
-      color: #7a5c45;
+      color: #5a7a5c;
       text-align: center;
       max-width: 310px;
       font-weight: 300;
@@ -106,34 +115,46 @@
       padding: 15px 22px;
       border-radius: 50px;
       background: #fff;
-      border: 1.5px solid rgba(180,140,100,0.2);
-      color: #2e1f14;
+      border: 1.5px solid rgba(120,160,120,0.2);
+      color: #2c3e2d;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.84rem;
       font-weight: 400;
       letter-spacing: 0.04em;
       text-decoration: none;
-      box-shadow: 0 2px 10px rgba(140,100,60,0.08);
+      box-shadow: 0 2px 10px rgba(100,140,100,0.08);
       transition: all 0.2s ease;
       cursor: pointer;
     }
     .link-btn:hover {
-      border-color: #a07850;
-      box-shadow: 0 4px 18px rgba(140,100,60,0.18);
+      border-color: #7a9e7e;
+      box-shadow: 0 4px 18px rgba(100,140,100,0.18);
       transform: translateY(-1px);
     }
     .link-btn .left { display: flex; align-items: center; gap: 12px; }
     .link-btn .icon { font-size: 1rem; }
-    .link-btn .arrow { font-size: 0.78rem; color: #a07850; }
+    .link-btn .arrow { font-size: 0.78rem; color: #7a9e7e; }
 
     .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 0.62rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #c4a882;
+      color: #a8c5a8;
       text-align: center;
       margin: 24px 0 10px;
       width: 100%;
+    }
+    .section-label::before, .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #a8c5a8);
+    }
+    .section-label::after {
+      background: linear-gradient(90deg, #a8c5a8, transparent);
     }
 
     .link-btn.coming-soon { opacity: 0.4; cursor: default; pointer-events: none; }
@@ -143,28 +164,26 @@
       font-size: 0.63rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #c4a882;
+      color: #a8c5a8;
       text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="avatar-wrap">
-      <img src="https://cdn.hihello.me/v/3273ea06-ad8d-4ce7-9c6a-84cced80cf1d.png-large-preserve-ratio" alt="Diane Camejo"/>
-    </div>
-    <div class="name">Diane <em>Camejo</em></div>
+    <div class="monogram"><span>DC</span></div>
+    <div class="name">Diane Camejo</div>
     <div class="title">Loan Officer &nbsp;·&nbsp; Helm Mortgage Corp.</div>
     <div class="deco">
-      <div class="deco-line"></div>✦<div class="deco-line right"></div>
+      <div class="deco-line"></div><div class="deco-line right"></div>
     </div>
     <p class="bio">Your mortgage journey starts with a conversation. I'm here to educate, guide, and make the process feel a lot less overwhelming — because how you feel throughout this matters just as much as the outcome.</p>
     <div class="links">
-      <a class="link-btn" href="https://calendly.com/dcamejo-helm/30min" target="_blank" style="background: #a07850; border-color: #a07850; color: #fff; font-weight: 500;">
-        <span class="left"><span class="icon">📅</span> Have Questions? Let's Talk!</span><span class="arrow" style="color: rgba(255,255,255,0.8);">↗</span>
+      <a class="link-btn" href="https://calendly.com/dcamejo-helm/30min" target="_blank" style="background: #7a9e7e; border-color: #7a9e7e; color: #fff; font-weight: 500;">
+        <span class="left"><span class="icon">📅</span> Schedule a Free Consultation</span><span class="arrow" style="color: rgba(255,255,255,0.8);">↗</span>
       </a>
 
-      <div class="section-label">✦ &nbsp; Connect &nbsp; ✦</div>
+      <div class="section-label">Connect</div>
       <a class="link-btn" href="https://www.instagram.com/" target="_blank">
         <span class="left"><span class="icon">📸</span> Instagram</span><span class="arrow">↗</span>
       </a>
@@ -184,13 +203,6 @@
         <span class="left"><span class="icon">⭐</span> Leave Me a Review — Zillow</span><span class="arrow">↗</span>
       </a>
 
-      <div class="section-label">✦ &nbsp; Resources &nbsp; ✦</div>
-      <a class="link-btn coming-soon" href="#">
-        <span class="left"><span class="icon">▶️</span> YouTube — Coming Soon</span><span class="arrow">—</span>
-      </a>
-      <a class="link-btn coming-soon" href="#">
-        <span class="left"><span class="icon">📋</span> Free Buyer Guides — Coming Soon</span><span class="arrow">—</span>
-      </a>
     </div>
     <div class="footer">© 2026 Diane Camejo</div>
   </div>
